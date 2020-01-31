@@ -105,3 +105,11 @@ clean:
 	@rm -rf Debug Release ${DRIVERS_BIN}/Debug ${DRIVERS_BIN}/Release
 
 
+#
+# Rules for installing
+#
+install:
+	@install -m 0755 -d $(DESTDIR)$(PREFIX)/share/ti/starterware/pru
+	@cp -dr --preserve=mode,timestamp ../../../../../include $(DESTDIR)$(PREFIX)/share/ti/starterware/include/
+	@install -m 0644 Debug/libdrivers.a $(DESTDIR)$(PREFIX)/share/ti/starterware/pru/
+
