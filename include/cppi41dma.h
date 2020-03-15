@@ -73,6 +73,8 @@ extern "C"
 #endif
 #elif defined(_TMS320C6X)
 #define CPPI_DMA_PACKED __attribute__ ((packed))
+#elif defined(__TI_COMPILER_VERSION__)
+#define CPPI_DMA_PACKED __attribute__ ((packed))
 #else
 #error Unrecognized COMPILER!
 #endif
